@@ -2,6 +2,8 @@ function rseq_nt = shuffle_codons(seq_nt)
 % rseq_nt = shuffle_codons(seq_nt)
 %   shuffle codons within [seq_nt], preserving codon bias and AA seq.
 %   when [seq_nt] is a cell array, shuffle between all genes.
+%
+% Alon Diament, Tuller Lab, 2016.
 
 multi_gene = iscell(seq_nt);
 if multi_gene
