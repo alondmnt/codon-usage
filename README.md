@@ -19,7 +19,7 @@ This collection includes a number of functions and models that I have been using
 
 ## random
 
-* _Sampling synonymous sequences_ from a given codon distribution can be very useful (see above) and has been surprisingly missing from matlab's bioinformatics toolbox, so here it is. Files: randseq_CUB
+* _Sampling synonymous sequences_ from a given codon distribution can be very useful (see above) and has been surprisingly missing from matlab's bioinformatics toolbox, so here it is. Files: randseq\_CUB
 * _Permuting sequences synonymously_ allows one to preserve the exact same codon usage while generting many samples. Codon permutations can be performed within each gene independently - changing their order while preserving the codon composition, and any optimality score that is determined by this composition of the gene - or globally, where codons may be exchanged between genes. Files: shuffle\_codons
 * _Generalized feature permutation_: Permutations of features along a vector based on their similarity / equivalence can be used as a control test. The following function returns a permutation for any vector of features with some distance defined between the features. For example, in the above scenario multiple codons that encode the same amino acid would have a small defined distance between them. But the approach here can further be extended to amino acids with similar biophysical properties, to features other than coding sequences, and so on. Files: randperm\_conserv\_feat
 * _Generalized feature sampling_: Similarly, we can generalize the sampling approach to arbitrary features. Files: rand\_conserv\_feat
