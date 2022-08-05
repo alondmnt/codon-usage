@@ -1,6 +1,7 @@
 function [W, GCN] = calc_tAI_weights(tGCN, S, S_rules)
 % [W, GCN] = calc_tAI_weights(tGCN, S, S_rules)
-% model: tRNA Adaptation Index (dos Reis, 2004)
+% model: tRNA Adaptation Index (dos Reis, NAR 2004)
+% with adjusted s-values from (Tuller et al., Genome Biology 2011)
 %
 % tGCN: tRNA Gene Copy Numbers given according to anti-codons.
 % S: s-values for all possible interactions between codons and tRNAs
@@ -23,7 +24,9 @@ if nargin < 3
 %                'C',    'A',     2};  % Lysidine
 end
 if nargin < 2
-    S = [0, 0, 0, 0, 0.561, 0.28, 0.9999, 0.68, 0.89]; % 0.41 original / 0.561 optimization vs. PA
+    S = [0, 0, 0, 0, 0.561, 0.28, 0.9999, 0.68, 0.89];
+    % S(5) = 0.561 optimization vs. PA (Tuller et al., Genome Biology 2011, https://doi.org/10.1186/gb-2011-12-11-r110)
+    % S(5) = 0.41 original optimization (dos Reis et al., NAR 2004, https://doi.org/10.1093/nar/gkh834)
 end
 
 t_GCN = tGCN.GCN;
