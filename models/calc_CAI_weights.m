@@ -22,7 +22,7 @@ ref_count = codoncount(ref_seq);
 codon_list = fieldnames(ref_count);
 cod2aa = cellfun(@aa2int, nt2aa(codon_list, ...
     'AlternativeStartCodons', false));
-ref_count = struct2array(ref_count);
+ref_count = cell2mat(struct2cell(ref_count))';
 ref_count(ref_count == 0) = 0.5; % in case a codon is missing
  
 %% NORMALIZED WEIGHTS

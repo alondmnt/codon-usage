@@ -19,7 +19,7 @@ if iscell(seq)
     return
 end
 
-gene_count = struct2array(codoncount(seq));
+gene_count = cell2mat(struct2cell(codoncount(seq)))';
 nn = ~(isnan(w) | w==0);
 score = exp(gene_count(nn) * log(w(nn)) / sum(gene_count(nn)));
 % this computation of geometric mean was presented in Class 2 / Slide 22.
