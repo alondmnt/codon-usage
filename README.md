@@ -1,5 +1,7 @@
 # codon-usage
 
+[![DOI](https://zenodo.org/badge/128677597.svg)](https://zenodo.org/badge/latestdoi/128677597)
+
 This collection includes a number of functions and models that I have been using repeatedly in many sequence analysis and engineering projects, and are often not available out-of-the-box in any of the standard tools. They are organized into the following categories:
 
 ## models
